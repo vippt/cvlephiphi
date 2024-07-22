@@ -1,0 +1,20 @@
+{
+  "name": "LêPhiPhi",
+  "short_name": "CV.LPP",
+  "start_url": "https://cv.lephiphi.com/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9YeNYNaRGjJbw3yeZqFEOD3Pm2jegSCJuKNlMjMVLghHChVQ6xaUdmaeJUWf_mMPa0J_YswHq5I7nGeuwfrWn1DY9_mRz5UpDedLJzLJsGg8WfZS9paQ_rheFobIRqwIHWi4iIDXQCPkfq9XrPNi2iufZtDuqInKtCw2zWQs1th3LX8oy1ZTIiCxkoto/s256/Untitled.ico",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
