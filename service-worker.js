@@ -1,19 +1,20 @@
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open('your-cache-name').then(function(cache) {
-      return cache.addAll([
-        'https://cv.lephiphi.com/',
-        'https://cv.lephiphi.com/',
-        'https://lephiphi.com/'
-      ]);
-    })
-  );
+// service-worker.js
+
+self.addEventListener('install', (event) => {
+  console.log('Service Worker installing.');
+  // Perform install steps
 });
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('activate', (event) => {
+  console.log('Service Worker activating.');
+  // Perform activate steps
+});
+
+self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request).then(function(response) {
-      return response || fetch(event.request);
-    })
+    caches.match(event.request)
+      .then((response) => {
+        return response || fetch(event.request);
+      })
   );
 });
