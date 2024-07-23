@@ -3,7 +3,7 @@
   "short_name": "CV Lê Phi Phi",
     "description": "App cv.lephiphi.com",
   "lang": "vi"
-  "start_url": "/",
+  "start_url": "https://cv.lephiphi.com/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
