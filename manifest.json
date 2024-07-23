@@ -1,6 +1,8 @@
 {
   "name": "CV Online LêPhiPhi",
   "short_name": "CV Lê Phi Phi",
+    "description": "App cv.lephiphi.com",
+  "lang": "vi"
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -18,6 +20,5 @@
       "type": "image/png"
     }
   ],
-  "description": "App cv.lephiphi.com",
-  "lang": "vi"
+
 }
