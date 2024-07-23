@@ -1,22 +1,25 @@
 {
-  "name": "CV Online LêPhiPhi",
-  "short_name": "CV Lê Phi Phi",
-    "description": "App cv.lephiphi.com",
-  "start_url": "/",
-  "display": "standalone",
   "background_color": "#ffffff",
+  "dir": "auto",
+  "display": "standalone",
+  "name": "cv.lephiphi",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "cv.lephiphi",
+  "start_url": "/",
   "theme_color": "#000000",
-  "lang": "vi"
   "icons": [
     {
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9YeNYNaRGjJbw3yeZqFEOD3Pm2jegSCJuKNlMjMVLghHChVQ6xaUdmaeJUWf_mMPa0J_YswHq5I7nGeuwfrWn1DY9_mRz5UpDedLJzLJsGg8WfZS9paQ_rheFobIRqwIHWi4iIDXQCPkfq9XrPNi2iufZtDuqInKtCw2zWQs1th3LX8oy1ZTIiCxkoto/s256/Untitled.ico",
-      "sizes": "192x192",
-      "type": "image/png"
+      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-FEPhQrbP3fe4t_-lKvR0ZOzuzK88kKIgJSmmj9ML_fEpzGa3sN9i5c3-IeUNkbIbebQtDh9lFGrhshx3AitmnEmyb1LNUz0eR-0QC-GfEYgBV_qGXmHWLX9BfWS6xeFcqv-NPI8ayDzEYGhsl5iTJg0DmdVPwYzfXWx4aoTiqJ-CQoUMA2gVhSXgY_k/w640-h640/Untitled%20(1).png",
+      "type": "image/png",
+      "sizes": "512x512"
     },
     {
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjGu-R7S5sK6S1y6ZhfOWx6GFe0aU6UbHMz57GVc0MCfkAv-QvopY1ExQ9CN1zXP0l8Ql2dgar8NT2HcoUW0ndQH3fmRM-ucJ9Np0iIrxziAP1Hv2oW89u2eqh_637hzeMTLp8YL9j6HfNgyMbA6wI2vGVEWgAKpTmEd94NdrIyKdkaY2yGdTlZbLYgPg/s1600/Untitled.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-FEPhQrbP3fe4t_-lKvR0ZOzuzK88kKIgJSmmj9ML_fEpzGa3sN9i5c3-IeUNkbIbebQtDh9lFGrhshx3AitmnEmyb1LNUz0eR-0QC-GfEYgBV_qGXmHWLX9BfWS6xeFcqv-NPI8ayDzEYGhsl5iTJg0DmdVPwYzfXWx4aoTiqJ-CQoUMA2gVhSXgY_k/w640-h640/Untitled%20(1).png",
+      "type": "image/x-icon"
     }
   ],
+  "id": "cvlpp",
+  "description": "APP CV Online Lê Phi Phi",
+  "lang": "vi"
 }
