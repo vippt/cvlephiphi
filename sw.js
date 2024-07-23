@@ -1,21 +1,23 @@
-self.addEventListener('install', function(event) {
+const CACHE_NAME = 'blog-cache-v1';
+const urlsToCache = [
+  '/',
+  '/?m=1',
+  '/?m=1'
+];
+
+// Install event
+self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open('my-blog-cache').then(function(cache) {
-      return cache.addAll([
-        '/',
-        '/index.html',
-        '/styles.css',
-        '/script.js',
-        '/icon-192x192.png',
-        '/icon-512x512.png'
-      ]);
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(urlsToCache);
     })
   );
 });
 
-self.addEventListener('fetch', function(event) {
+// Fetch event
+self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then(function(response) {
+    caches.match(event.request).then(response => {
       return response || fetch(event.request);
     })
   );
