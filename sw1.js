@@ -1,47 +1,19 @@
-// This is the "Offline page" service worker
+const js = `
+'use strict';
+const CACHE_VERSION=1;
+let CURRENT_CACHES={offline:"offline-v1"};
+const OFFLINE_URL="/offline.html";
+function createCacheBustedRequest(a){let b=new Request(a,{cache:"reload"});if("cache"in b)return b;let c=new URL(a,self.location.href);return c.search+=(c.search?"&":"")+"cachebust="+Date.now(),new Request(c)}self.addEventListener("install",a=>{a.waitUntil(fetch(createCacheBustedRequest(OFFLINE_URL)).then(function(a){return caches.open(CURRENT_CACHES.offline).then(function(b){return b.put(OFFLINE_URL,a)})}))}),self.addEventListener("activate",a=>{let b=Object.keys(CURRENT_CACHES).map(function(a){return CURRENT_CACHES[a]});a.waitUntil(caches.keys().then(a=>Promise.all(a.map(a=>{if(-1===b.indexOf(a))return console.log("Deleting out of date cache:",a),caches.delete(a)}))))}),self.addEventListener("fetch",a=>{("navigate"===a.request.mode||"GET"===a.request.method&&a.request.headers.get("accept").includes("text/html"))&&(console.log("Handling fetch event for",a.request.url),a.respondWith(fetch(a.request).catch(a=>(console.log("Fetch failed; returning offline page instead.",a),caches.match(OFFLINE_URL)))))});
 
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
+`
 
-const CACHE = "pwabuilder-page";
-
-// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
-const offlineFallbackPage = "ToDo-replace-this-name.html";
-
-self.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "SKIP_WAITING") {
-    self.skipWaiting();
-  }
-});
-
-self.addEventListener('install', async (event) => {
-  event.waitUntil(
-    caches.open(CACHE)
-      .then((cache) => cache.add(offlineFallbackPage))
-  );
-});
-
-if (workbox.navigationPreload.isSupported()) {
-  workbox.navigationPreload.enable();
-}
-
-self.addEventListener('fetch', (event) => {
-  if (event.request.mode === 'navigate') {
-    event.respondWith((async () => {
-      try {
-        const preloadResp = await event.preloadResponse;
-
-        if (preloadResp) {
-          return preloadResp;
-        }
-
-        const networkResp = await fetch(event.request);
-        return networkResp;
-      } catch (error) {
-
-        const cache = await caches.open(CACHE);
-        const cachedResp = await cache.match(offlineFallbackPage);
-        return cachedResp;
-      }
-    })());
-  }
-});
+async function handleRequest(request) {
+  return new Response(js, {
+      headers: {
+            "content-type": "application/javascript;charset=UTF-8",
+                },
+                  })
+                  }
+addEventListener("fetch", event => {
+  return event.respondWith(handleRequest(event.request))
+  })
