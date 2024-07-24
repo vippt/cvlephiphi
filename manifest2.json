@@ -23,7 +23,7 @@ addEventListener("fetch", event => {
   "id": "cvlpp",
   "description": "APP CV Online Lê Phi Phi",
   "lang": "vi"
-}
+
  const json = JSON.stringify(data, null, 2)
   return event.respondWith(
       new Response(json, {
