@@ -1,15 +1,16 @@
-{
-  "background_color": "#ffffff",
-  "dir": "auto",
-  "display": "standalone",
-  "name": "cv.lephiphi",
-  "orientation": "any",
-  "scope": "/",
-  "short_name": "cv.lephiphi",
-  "start_url": "/",
-  "theme_color": "#000000",
-  "icons": [
-    {
+addEventListener("fetch", event => {
+  const data = {
+       "name": "CV Online Lê Phi Phi ",
+         "short_name": "CV Online Lê Phi Phi",
+           "description": " CV Online Lê Phi Phi",
+             "lang": "Vi",
+               "display": "standalone",
+                 "background_color": "#ffffff",
+                   "start_url": "/?utm_source=homescreen",
+                     "theme_color": "#ffffff",
+                       "orientation": "portrait",
+                         "icons": [
+                             {
       "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-FEPhQrbP3fe4t_-lKvR0ZOzuzK88kKIgJSmmj9ML_fEpzGa3sN9i5c3-IeUNkbIbebQtDh9lFGrhshx3AitmnEmyb1LNUz0eR-0QC-GfEYgBV_qGXmHWLX9BfWS6xeFcqv-NPI8ayDzEYGhsl5iTJg0DmdVPwYzfXWx4aoTiqJ-CQoUMA2gVhSXgY_k/w640-h640/Untitled%20(1).png",
       "type": "image/png",
       "sizes": "512x512"
@@ -23,3 +24,12 @@
   "description": "APP CV Online Lê Phi Phi",
   "lang": "vi"
 }
+ const json = JSON.stringify(data, null, 2)
+  return event.respondWith(
+      new Response(json, {
+            headers: {
+                    "content-type": "application/json;charset=UTF-8"
+                          }
+                              })
+                                )
+                                })
