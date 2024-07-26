@@ -1,8 +1,8 @@
 const CACHE_NAME = 'blog-cache-v1';
 const urlsToCache = [
-  '/',
-  '/?m=1',
-  '/?m=1'
+  'https://www.lephiphi.com/',
+  'https://www.lephiphi.com/?m=1',
+  'https://www.lephiphi.com/?m=1'
 ];
 
 // Install event
